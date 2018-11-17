@@ -6,23 +6,15 @@ using System.Threading.Tasks;
 
 namespace TextProcessing.TextObjectModel.Models
 {
-    public class Word
+    public class Word : SentenceElement
     {
-        public string Symbols { get; private set; } = string.Empty;
-
-        public Word(string symbols)
+        public Word(string symbols) : base(symbols)
         {
-            Symbols = symbols;
         }
 
         public int Length
         {
             get => Symbols.Length;
-        }
-
-        public override string ToString()
-        {
-            return Symbols;
         }
     }
 }

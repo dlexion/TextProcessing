@@ -6,18 +6,10 @@ using System.Threading.Tasks;
 
 namespace TextProcessing.TextObjectModel.Models
 {
-    public class Separator
+    public class Separator : SentenceElement
     {
-        public string Symbols { get; set; }
-
-        public Separator(string symbols)
+        public Separator(string symbols) : base(symbols)
         {
-            Symbols = symbols;
-        }
-
-        public override string ToString()
-        {
-            return Symbols;
         }
     }
 }
