@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ISentenceElement.cs" />
+    <Compile Include="Interfaces\ISeparator.cs" />
+    <Compile Include="Interfaces\IWord.cs" />
     <Compile Include="Models\SentenceElement.cs" />
     <Compile Include="Models\Separator.cs" />
     <Compile Include="Models\Word.cs" />

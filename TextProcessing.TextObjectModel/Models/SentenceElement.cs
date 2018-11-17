@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextProcessing.TextObjectModel.Interfaces;
 
 namespace TextProcessing.TextObjectModel.Models
 {
-    public abstract class SentenceElement
+    public abstract class SentenceElement : ISentenceElement
     {
         public virtual string Symbols { get; protected set; } = string.Empty;
 
