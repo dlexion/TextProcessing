@@ -7,7 +7,7 @@ using TextProcessing.TextObjectModel.Interfaces;
 
 namespace TextProcessing.TextObjectModel.Models
 {
-    public class Sentence
+    public class Sentence : ISentence
     {
         private List<ISentenceElement> _elements;
 
