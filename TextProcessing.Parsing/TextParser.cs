@@ -54,11 +54,12 @@ namespace TextProcessing.Parsing
 
                 elements.Add(new Separator(match.Groups[2].ToString()));
 
-                var res = sentenceSeparators.Any(x => x.Equals(match.Groups[2].ToString().TrimEnd(new char[] { ' ', '\n', '\t' })));
+                var res = sentenceSeparators.Any(x => x.Equals(match.Groups[2].ToString().TrimEnd(' ')));
 
                 if (res)
                 {
                     CreateSentence(text, elements);
+                    elements = new List<ISentenceElement>();
                 }
             }
 
@@ -70,7 +71,6 @@ namespace TextProcessing.Parsing
             if (text != null)
             {
                 text.Add(new Sentence(elements));
-                elements = new List<ISentenceElement>();
             }
             else
             {
