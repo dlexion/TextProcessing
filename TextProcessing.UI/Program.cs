@@ -28,6 +28,22 @@ namespace TextProcessing.UI
 
                 Console.WriteLine("Text:");
                 Console.WriteLine(text);
+
+                //Вывести все предложения заданного текста 
+                //в порядке возрастания количества слов в каждом из них.
+
+                #region Task1 implementation
+
+                var sortedSentences = text.GetSentences().OrderBy(x => x.GetElements<Word>().Count);
+
+                Console.WriteLine("Task 1");
+                foreach (var item in sortedSentences)
+                {
+                    Console.WriteLine(item);
+                }
+                Console.WriteLine();
+
+                #endregion
             }
             catch (ConfigurationErrorsException ex)
             {
