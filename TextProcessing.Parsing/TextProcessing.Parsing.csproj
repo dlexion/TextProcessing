@@ -41,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parser.cs" />
+    <Compile Include="ITextParser.cs" />
+    <Compile Include="TextParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextProcessing.TextObjectModel\TextProcessing.TextObjectModel.csproj">
+      <Project>{6779FC24-7E9A-4945-BDA3-0940A4224FD3}</Project>
+      <Name>TextProcessing.TextObjectModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
