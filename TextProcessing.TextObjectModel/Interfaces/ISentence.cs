@@ -11,5 +11,7 @@ namespace TextProcessing.TextObjectModel.Interfaces
         int Count { get; }
 
         ICollection<T> GetElements<T>(Func<T, bool> selector = null) where T : ISentenceElement;
+
+        bool IsInterrogative();
     }
 }

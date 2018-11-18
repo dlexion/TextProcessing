@@ -33,6 +33,16 @@ namespace TextProcessing.TextObjectModel.Models
                 new List<T>(_elements.OfType<T>().Where(selector).ToList());
         }
 
+        public bool IsInterrogative()
+        {
+            if (_elements.Last() is Separator lastElement)
+            {
+                return lastElement.IsQuestionMark();
+            }
+
+            return false;
+        }
+
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
