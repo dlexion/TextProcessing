@@ -34,14 +34,36 @@ namespace TextProcessing.UI
 
                 #region Task1 implementation
 
+                Console.WriteLine();
+                Console.WriteLine("Task 1");
+
                 var sortedSentences = text.GetSentences().OrderBy(x => x.GetElements<Word>().Count);
 
-                Console.WriteLine("Task 1");
                 foreach (var item in sortedSentences)
                 {
                     Console.WriteLine(item);
                 }
+
+                #endregion
+
+                //Во всех вопросительных предложениях текста 
+                //найти и напечатать без повторений слова заданной
+                //длины.
+
+                #region Tasl2 implementation
+
                 Console.WriteLine();
+                Console.WriteLine("Task 2");
+
+                var lenth = 5;
+                var words = text.GetSentences(x => x.IsInterrogative())
+                                .SelectMany(y => y.GetElements<Word>(x => x.Length == lenth))
+                                .Distinct();
+
+                foreach (var item in words)
+                {
+                    Console.WriteLine(item);
+                }
 
                 #endregion
             }
