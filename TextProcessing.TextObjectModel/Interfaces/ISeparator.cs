@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TextProcessing.TextObjectModel.Interfaces
+﻿namespace TextProcessing.TextObjectModel.Interfaces
 {
-    interface ISeparator
+    public interface ISeparator
     {
+        bool IsQuestionMark();
     }
 }

@@ -12,5 +12,15 @@ namespace TextProcessing.TextObjectModel.Models
         public Separator(string symbols) : base(symbols)
         {
         }
+
+        public bool IsQuestionMark()
+        {
+            if (Symbols.Contains("?"))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
