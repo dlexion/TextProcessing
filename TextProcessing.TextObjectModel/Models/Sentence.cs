@@ -29,8 +29,8 @@ namespace TextProcessing.TextObjectModel.Models
         public ICollection<T> GetElements<T>(Func<T, bool> selector = null) where T : ISentenceElement
         {
             return selector == null ?
-                _elements.OfType<T>().ToList() :
-                _elements.OfType<T>().Where(selector).ToList();
+                new List<T>(_elements.OfType<T>().ToList()) :
+                new List<T>(_elements.OfType<T>().Where(selector).ToList());
         }
 
         public override string ToString()
