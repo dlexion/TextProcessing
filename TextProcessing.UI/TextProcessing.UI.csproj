@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +49,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextProcessing.Parsing\TextProcessing.Parsing.csproj">
+      <Project>{D8CFCDA6-8F96-457C-85CB-963A01A9A570}</Project>
+      <Name>TextProcessing.Parsing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextProcessing.TextObjectModel\TextProcessing.TextObjectModel.csproj">
+      <Project>{6779FC24-7E9A-4945-BDA3-0940A4224FD3}</Project>
+      <Name>TextProcessing.TextObjectModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
