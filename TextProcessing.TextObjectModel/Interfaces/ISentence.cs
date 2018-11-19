@@ -13,5 +13,7 @@ namespace TextProcessing.TextObjectModel.Interfaces
         ICollection<T> GetElements<T>(Func<T, bool> selector = null) where T : ISentenceElement;
 
         bool IsInterrogative();
+
+        ICollection<ISentenceElement> RemoveAll<T>(Predicate<T> predicate) where T : ISentenceElement;
     }
 }

@@ -35,12 +35,42 @@ namespace TextProcessing.TextObjectModel.Models
 
         public bool IsInterrogative()
         {
-            if (_elements.Last() is Separator lastElement)
+            if (_elements.Last() is ISeparator lastElement)
             {
                 return lastElement.IsQuestionMark();
             }
 
             return false;
+        }
+
+        public ICollection<ISentenceElement> RemoveAll<T>(Predicate<T> predicate) where T : ISentenceElement
+        {
+            var appropriateElements = _elements.OfType<T>().ToList().FindAll(predicate);
+
+            if (appropriateElements.Any())
+            {
+                foreach (var item in appropriateElements)
+                {
+                    RemoveWord(item);
+                }
+            }
+
+            return _elements;
+        }
+
+        private void RemoveWord(ISentenceElement word)
+        {
+            var index = _elements.IndexOf(word);
+
+            //If it is last word and there are more then 1 word in sentence,
+            //then remove separator before word
+            if ((index == _elements.Count - 2) && (index > 0))
+            {
+                index--;
+            }
+
+            _elements.Remove(word);
+            _elements.RemoveAt(index);
         }
 
         public override string ToString()
@@ -56,3 +86,4 @@ namespace TextProcessing.TextObjectModel.Models
         }
     }
 }
+
