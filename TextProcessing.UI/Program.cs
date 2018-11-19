@@ -56,6 +56,7 @@ namespace TextProcessing.UI
                 Console.WriteLine("Task 2");
 
                 var lenth = 5;
+
                 var words = text.GetSentences(x => x.IsInterrogative())
                                 .SelectMany(y => y.GetElements<Word>(x => x.Length == lenth))
                                 .Distinct();
@@ -74,10 +75,11 @@ namespace TextProcessing.UI
                 Console.WriteLine();
                 Console.WriteLine("Task 3");
 
-                int wordLenght = 3;
+                int wordLenght = 4;
+
                 var result = text.GetSentences()
                     .Select(x => new Sentence(
-                        x.RemoveAll<Word>(y => (y.Length == wordLenght) && (y.StartWithConsonant()))))
+                        x.RemoveAll<Word>(y => (y.Length == wordLenght) && y.StartWithConsonant())))
                     .Where(x => x.Count > 0).ToList();
 
                 foreach (var item in result)
@@ -86,6 +88,29 @@ namespace TextProcessing.UI
                 }
 
                 #endregion
+
+                #region Task4 implementation
+                Console.WriteLine();
+                Console.WriteLine("Task 4");
+
+                var wordToReplaceLenght = 4;
+
+                var sentenceId = 0;
+
+                var substring = "a simple string to insert";
+
+                Console.WriteLine(text.GetSentenceById(sentenceId));
+
+                var wordsAfterReplace = text.GetSentenceById(sentenceId)
+                    .InsertInsteadOf<Word>(y => y.Length == wordToReplaceLenght, p.ParseLine(substring));
+
+                var newSentence = new Sentence(wordsAfterReplace);
+                Console.WriteLine(newSentence);
+
+                #endregion
+
+                Console.WriteLine();
+                Console.WriteLine(text);
             }
             catch (ConfigurationErrorsException ex)
             {

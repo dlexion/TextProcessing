@@ -25,20 +25,21 @@ namespace TextProcessing.Parsing
 
             while ((line = sr.ReadLine()) != null)
             {
-                line = String.Concat(line, " ");
                 line = Regex.Replace(line, "[\f\n\r\t\v]", " ");
 
                 elements = ParseLine(line, elements, text);
             }
         }
 
-        public ICollection<ISentenceElement> ParseLine(string line)
+        public IList<ISentenceElement> ParseLine(string line)
         {
             return ParseLine(line, null, null);
         }
 
-        private ICollection<ISentenceElement> ParseLine(string line, ICollection<ISentenceElement> elements, IText text = null)
+        private IList<ISentenceElement> ParseLine(string line, ICollection<ISentenceElement> elements, IText text = null)
         {
+            line = String.Concat(line, " ");
+
             if (elements == null)
             {
                 elements = new List<ISentenceElement>();
@@ -63,7 +64,7 @@ namespace TextProcessing.Parsing
                 }
             }
 
-            return elements;
+            return elements.ToList();
         }
 
         private void CreateSentence(IText text, ICollection<ISentenceElement> elements)

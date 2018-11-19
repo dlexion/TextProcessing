@@ -15,5 +15,9 @@ namespace TextProcessing.TextObjectModel.Interfaces
         bool IsInterrogative();
 
         ICollection<ISentenceElement> RemoveAll<T>(Predicate<T> predicate) where T : ISentenceElement;
+
+        ICollection<ISentenceElement> InsertInsteadOf<T>(Predicate<T> predicate,
+            IList<ISentenceElement> elements)
+            where T : ISentenceElement;
     }
 }

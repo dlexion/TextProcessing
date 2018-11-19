@@ -45,32 +45,112 @@ namespace TextProcessing.TextObjectModel.Models
 
         public ICollection<ISentenceElement> RemoveAll<T>(Predicate<T> predicate) where T : ISentenceElement
         {
-            var appropriateElements = _elements.OfType<T>().ToList().FindAll(predicate);
+            var resultCollection = new List<ISentenceElement>(_elements.ToList());
+            var appropriateElements = GetAppropriateElements(predicate);
+
+            if (appropriateElements.Any())
+            {
+                RemoveWords(appropriateElements, resultCollection);
+            }
+
+            return resultCollection;
+        }
+
+        public ICollection<ISentenceElement> InsertInsteadOf<T>(Predicate<T> predicate,
+            IList<ISentenceElement> elements)
+            where T : ISentenceElement
+        {
+            var resultCollection = new List<ISentenceElement>(_elements.ToList());
+            var appropriateElements = GetAppropriateElements(predicate);
 
             if (appropriateElements.Any())
             {
                 foreach (var item in appropriateElements)
                 {
-                    RemoveWord(item);
+                    int index = RemoveWord(item, resultCollection, true);
+                    resultCollection = InsertRange(index, elements, resultCollection);
                 }
             }
 
-            return _elements;
+            return resultCollection;
         }
 
-        private void RemoveWord(ISentenceElement word)
-        {
-            var index = _elements.IndexOf(word);
 
-            //If it is last word and there are more then 1 word in sentence,
+        private int RemoveWord(ISentenceElement word, IList<ISentenceElement> collection, bool toInsert = false)
+        {
+            var index = collection.IndexOf(word);
+
+            bool lastButNotSole = (index == collection.Count - 2) && (index > 0);
+
+            bool lastBeforeRemoving = (collection.OfType<Word>().Last().Equals(word));
+
+            collection.Remove(word);
+
+            if (toInsert)
+            {
+                if (!lastBeforeRemoving)
+                {
+                    RemoveSeparatorBeforeWord(lastButNotSole, index, collection);
+                }
+            }
+            else
+            {
+                RemoveSeparatorBeforeWord(lastButNotSole, index, collection);
+            }
+
+            return index;
+        }
+
+        private void RemoveSeparatorBeforeWord(bool lastButNotSole, int index, IList<ISentenceElement> collection)
+        {
+            //If it is last word and there are more then 1 words in sentence,
             //then remove separator before word
-            if ((index == _elements.Count - 2) && (index > 0))
+            if (lastButNotSole)
             {
                 index--;
             }
+            collection.RemoveAt(index);
+        }
 
-            _elements.Remove(word);
-            _elements.RemoveAt(index);
+        private void RemoveWords<T>(ICollection<T> words, IList<ISentenceElement> collection) where T : ISentenceElement
+        {
+            foreach (var item in words)
+            {
+                RemoveWord(item, collection);
+            }
+        }
+
+        private ICollection<T> GetAppropriateElements<T>(Predicate<T> predicate)
+        {
+            return _elements.OfType<T>().ToList().FindAll(predicate);
+        }
+
+        private List<ISentenceElement> InsertRange(int index,
+            IList<ISentenceElement> elementsToInsert,
+            List<ISentenceElement> collection)
+        {
+            var currentIndex = collection.Count;
+
+            collection.InsertRange(index, elementsToInsert);
+
+            if (collection.Last().Equals(collection[index + elementsToInsert.Count]))
+            {
+                collection.RemoveAt(index + elementsToInsert.Count - 1);
+            }
+
+            return collection;
+        }
+
+        private bool IsFirstOrLast<T>(T element) where T : ISentenceElement
+        {
+            var collection = _elements.OfType<T>().ToList();
+
+            if (element.Equals(collection.First()) || element.Equals(collection.Last()))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public override string ToString()
@@ -86,4 +166,3 @@ namespace TextProcessing.TextObjectModel.Models
         }
     }
 }
-

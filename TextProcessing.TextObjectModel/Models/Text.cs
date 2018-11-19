@@ -16,6 +16,16 @@ namespace TextProcessing.TextObjectModel.Models
             _sentences.Add(sentence);
         }
 
+        public ISentence GetSentenceById(int index)
+        {
+            if (index < 0 || index >= _sentences.Count)
+            {
+                throw new ArgumentOutOfRangeException("index");
+            }
+
+            return _sentences.ElementAt(index);
+        }
+
         public ICollection<ISentence> GetSentences(Func<ISentence, bool> selector = null)
         {
             return selector == null ?

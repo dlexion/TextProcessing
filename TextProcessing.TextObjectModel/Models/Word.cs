@@ -36,6 +36,11 @@ namespace TextProcessing.TextObjectModel.Models
 
         public override bool Equals(object obj)
         {
+            if(!(obj is Word))
+            {
+                return false;
+            }
+
             return this == (Word)obj;
         }
 

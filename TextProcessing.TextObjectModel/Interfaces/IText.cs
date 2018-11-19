@@ -7,6 +7,8 @@ namespace TextProcessing.TextObjectModel.Interfaces
     {
         void Add(ISentence sentence);
 
+        ISentence GetSentenceById(int index);
+
         ICollection<ISentence> GetSentences(Func<ISentence, bool> selector = null);
     }
 }
