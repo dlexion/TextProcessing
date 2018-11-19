@@ -20,11 +20,11 @@ namespace TextProcessing.UI
                 var outputPath = ConfigurationManager.AppSettings["OutputPath"];
 
                 var text = new Text();
-                var p = new TextParser();
+                var parser = new TextParser();
 
                 using (var sr = new StreamReader(inputPath))
                 {
-                    p.Parse(text, sr);
+                    parser.Parse(text, sr);
                 }
 
                 Console.WriteLine("Text:");
@@ -103,7 +103,7 @@ namespace TextProcessing.UI
                 Console.WriteLine(text.GetSentenceById(sentenceId));
 
                 var wordsAfterReplace = text.GetSentenceById(sentenceId)
-                    .InsertInsteadOf<Word>(y => y.Length == wordToReplaceLenght, p.ParseLine(substring));
+                    .InsertInsteadOf<Word>(y => y.Length == wordToReplaceLenght, parser.ParseLine(substring));
 
                 var newSentence = new Sentence(wordsAfterReplace);
                 Console.WriteLine(newSentence);
