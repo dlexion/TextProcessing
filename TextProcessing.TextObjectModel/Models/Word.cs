@@ -21,7 +21,7 @@ namespace TextProcessing.TextObjectModel.Models
 
         public bool StartWithConsonant()
         {
-            return Symbols.FirstOrDefault().IsVovel();
+            return Symbols.FirstOrDefault().IsConsonant();
         }
 
         public static bool operator ==(Word word1, Word word2)
