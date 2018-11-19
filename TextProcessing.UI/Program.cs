@@ -120,6 +120,10 @@ namespace TextProcessing.UI
             {
                 Console.WriteLine(ex.Message);
             }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             catch (IOException ex)
             {
                 Console.WriteLine(ex.Message);
