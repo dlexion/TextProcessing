@@ -9,7 +9,21 @@ namespace TextProcessing.TextObjectModel.Models
 {
     public abstract class SentenceElement : ISentenceElement
     {
-        public virtual string Symbols { get; protected set; } = string.Empty;
+        private string _symbols = string.Empty;
+
+        public virtual string Symbols
+        {
+            get => _symbols;
+            protected set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Symbols");
+                }
+
+                _symbols = value;
+            }
+        }
 
         public SentenceElement(string symbols)
         {

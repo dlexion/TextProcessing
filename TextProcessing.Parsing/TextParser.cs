@@ -16,7 +16,11 @@ namespace TextProcessing.Parsing
         {
             if (sr == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("StreamReader");
+            }
+            if(text == null)
+            {
+                throw new ArgumentNullException("text");
             }
 
             string line;

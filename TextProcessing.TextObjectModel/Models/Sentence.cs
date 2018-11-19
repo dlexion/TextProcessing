@@ -11,31 +11,45 @@ namespace TextProcessing.TextObjectModel.Models
     {
         private List<ISentenceElement> _elements;
 
-        public Sentence()
+        public List<ISentenceElement> Elements
         {
-            _elements = new List<ISentenceElement>();
+            get => _elements;
+            set
+            {
+                if(value == null)
+                {
+                    throw new ArgumentNullException("SentenceElement");
+                }
+
+                _elements = value;
+            }
+        }
+
+        private Sentence()
+        {
+            Elements = new List<ISentenceElement>();
         }
 
         public Sentence(IEnumerable<ISentenceElement> elements) : this()
         {
-            _elements.AddRange(elements);
+            Elements.AddRange(elements);
         }
 
         public int Count
         {
-            get => _elements.Count;
+            get => Elements.Count;
         }
 
         public ICollection<T> GetElements<T>(Func<T, bool> selector = null) where T : ISentenceElement
         {
             return selector == null ?
-                new List<T>(_elements.OfType<T>().ToList()) :
-                new List<T>(_elements.OfType<T>().Where(selector).ToList());
+                new List<T>(Elements.OfType<T>().ToList()) :
+                new List<T>(Elements.OfType<T>().Where(selector).ToList());
         }
 
         public bool IsInterrogative()
         {
-            if (_elements.Last() is ISeparator lastElement)
+            if (Elements.Last() is ISeparator lastElement)
             {
                 return lastElement.IsQuestionMark();
             }
@@ -45,7 +59,7 @@ namespace TextProcessing.TextObjectModel.Models
 
         public ICollection<ISentenceElement> RemoveAll<T>(Predicate<T> predicate) where T : ISentenceElement
         {
-            var resultCollection = new List<ISentenceElement>(_elements.ToList());
+            var resultCollection = new List<ISentenceElement>(Elements.ToList());
             var appropriateElements = GetAppropriateElements(predicate);
 
             if (appropriateElements.Any())
@@ -60,7 +74,7 @@ namespace TextProcessing.TextObjectModel.Models
             IList<ISentenceElement> elements)
             where T : ISentenceElement
         {
-            var resultCollection = new List<ISentenceElement>(_elements.ToList());
+            var resultCollection = new List<ISentenceElement>(Elements.ToList());
             var appropriateElements = GetAppropriateElements(predicate);
 
             if (appropriateElements.Any())
@@ -122,7 +136,7 @@ namespace TextProcessing.TextObjectModel.Models
 
         private ICollection<T> GetAppropriateElements<T>(Predicate<T> predicate)
         {
-            return _elements.OfType<T>().ToList().FindAll(predicate);
+            return Elements.OfType<T>().ToList().FindAll(predicate);
         }
 
         private List<ISentenceElement> InsertRange(int index,
@@ -143,7 +157,7 @@ namespace TextProcessing.TextObjectModel.Models
 
         private bool IsFirstOrLast<T>(T element) where T : ISentenceElement
         {
-            var collection = _elements.OfType<T>().ToList();
+            var collection = Elements.OfType<T>().ToList();
 
             if (element.Equals(collection.First()) || element.Equals(collection.Last()))
             {
@@ -157,7 +171,7 @@ namespace TextProcessing.TextObjectModel.Models
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            foreach (var item in _elements)
+            foreach (var item in Elements)
             {
                 stringBuilder.Append(item.ToString());
             }

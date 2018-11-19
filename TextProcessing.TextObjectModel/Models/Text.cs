@@ -13,6 +13,11 @@ namespace TextProcessing.TextObjectModel.Models
 
         public void Add(ISentence sentence)
         {
+            if (sentence == null)
+            {
+                throw new ArgumentNullException("Sentence");
+            }
+
             _sentences.Add(sentence);
         }
 
