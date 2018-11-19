@@ -159,18 +159,6 @@ namespace TextProcessing.TextObjectModel.Models
             return collection;
         }
 
-        private bool IsFirstOrLast<T>(T element) where T : ISentenceElement
-        {
-            var collection = Elements.OfType<T>().ToList();
-
-            if (element.Equals(collection.First()) || element.Equals(collection.Last()))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
