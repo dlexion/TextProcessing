@@ -50,7 +50,7 @@ namespace TextProcessing.UI
                 //найти и напечатать без повторений слова заданной
                 //длины.
 
-                #region Tasl2 implementation
+                #region Task2 implementation
 
                 Console.WriteLine();
                 Console.WriteLine("Task 2");
@@ -61,6 +61,26 @@ namespace TextProcessing.UI
                                 .Distinct();
 
                 foreach (var item in words)
+                {
+                    Console.WriteLine(item);
+                }
+
+                #endregion
+
+                //Из текста удалить все слова заданной длины, начинающиеся на согласную букву.
+
+                #region Task3 implementation
+
+                Console.WriteLine();
+                Console.WriteLine("Task 3");
+
+                int wordLenght = 3;
+                var result = text.GetSentences()
+                    .Select(x => new Sentence(
+                        x.RemoveAll<Word>(y => (y.Length == wordLenght) && (y.StartWithConsonant()))))
+                    .Where(x => x.Count > 0).ToList();
+
+                foreach (var item in result)
                 {
                     Console.WriteLine(item);
                 }
