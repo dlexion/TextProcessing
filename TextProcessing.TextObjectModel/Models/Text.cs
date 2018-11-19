@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using TextProcessing.TextObjectModel.Interfaces;
 
 namespace TextProcessing.TextObjectModel.Models
 {
+    [DataContract(Namespace = "", Name = "Text")]
+    [KnownType(typeof(Sentence))]
     public class Text : IText
     {
+        [DataMember(Name = "Sentences")]
         private ICollection<ISentence> _sentences = new List<ISentence>();
 
         public void Add(ISentence sentence)
@@ -48,6 +54,36 @@ namespace TextProcessing.TextObjectModel.Models
             }
 
             return stringBuilder.ToString();
+        }
+
+        public void WriteObject(string fileName)
+        {
+            using (var fileStream = new FileStream(fileName, FileMode.Create))
+            {
+                DataContractSerializer serializer = new DataContractSerializer(this.GetType());
+
+                using (var writer = XmlWriter.Create(fileStream, new XmlWriterSettings { Indent = true }))
+                {
+                    serializer.WriteObject(writer, this);
+                }
+            }
+        }
+
+
+        public Text ReadObject(string fileName)
+        {
+            using (var fileStream = new FileStream(fileName, FileMode.Open))
+            {
+                using (XmlDictionaryReader reader =
+                    XmlDictionaryReader.CreateTextReader(fileStream, new XmlDictionaryReaderQuotas()))
+                {
+                    DataContractSerializer serializer = new DataContractSerializer(this.GetType());
+
+                    Text newText = (Text)serializer.ReadObject(reader, true);
+
+                    return newText;
+                }
+            }
         }
     }
 }

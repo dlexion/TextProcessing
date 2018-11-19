@@ -17,6 +17,7 @@ namespace TextProcessing.UI
             try
             {
                 var inputPath = ConfigurationManager.AppSettings["InputPath"];
+                var outputPath = ConfigurationManager.AppSettings["OutputPath"];
 
                 var text = new Text();
                 var p = new TextParser();
@@ -111,6 +112,7 @@ namespace TextProcessing.UI
 
                 Console.WriteLine();
                 Console.WriteLine(text);
+                text.WriteObject(outputPath);
             }
             catch (ConfigurationErrorsException ex)
             {

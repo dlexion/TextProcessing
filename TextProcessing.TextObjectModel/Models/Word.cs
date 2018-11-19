@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using TextProcessing.TextObjectModel.Extensions;
@@ -8,6 +9,7 @@ using TextProcessing.TextObjectModel.Interfaces;
 
 namespace TextProcessing.TextObjectModel.Models
 {
+    [DataContract(Namespace = "", Name = "Word")]
     public class Word : SentenceElement, IWord
     {
         public Word(string symbols) : base(symbols)
@@ -36,7 +38,7 @@ namespace TextProcessing.TextObjectModel.Models
 
         public override bool Equals(object obj)
         {
-            if(!(obj is Word))
+            if (!(obj is Word))
             {
                 return false;
             }

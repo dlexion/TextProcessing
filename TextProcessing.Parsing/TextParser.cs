@@ -18,7 +18,7 @@ namespace TextProcessing.Parsing
             {
                 throw new ArgumentNullException("StreamReader");
             }
-            if(text == null)
+            if (text == null)
             {
                 throw new ArgumentNullException("text");
             }

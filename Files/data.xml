@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Text xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Sentences xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+    <d2p1:anyType xmlns="" i:type="Sentence">
+      <Sentence>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>just</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>test</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols>. </Symbols>
+        </d2p1:anyType>
+      </Sentence>
+    </d2p1:anyType>
+    <d2p1:anyType xmlns="" i:type="Sentence">
+      <Sentence>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>this</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>text</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols>! </Symbols>
+        </d2p1:anyType>
+      </Sentence>
+    </d2p1:anyType>
+    <d2p1:anyType xmlns="" i:type="Sentence">
+      <Sentence>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>ok</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols>? </Symbols>
+        </d2p1:anyType>
+      </Sentence>
+    </d2p1:anyType>
+    <d2p1:anyType xmlns="" i:type="Sentence">
+      <Sentence>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>lets</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>go</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols>. </Symbols>
+        </d2p1:anyType>
+      </Sentence>
+    </d2p1:anyType>
+    <d2p1:anyType xmlns="" i:type="Sentence">
+      <Sentence>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>Peter</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>Piper</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>picked</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>a</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>peck</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>of</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>pickled</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>peppers</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols>. </Symbols>
+        </d2p1:anyType>
+      </Sentence>
+    </d2p1:anyType>
+    <d2p1:anyType xmlns="" i:type="Sentence">
+      <Sentence>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>A</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>peck</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>of</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>pickled</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols>. </Symbols>
+        </d2p1:anyType>
+      </Sentence>
+    </d2p1:anyType>
+    <d2p1:anyType xmlns="" i:type="Sentence">
+      <Sentence>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>peppers</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>Peter</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>Piper</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>picked</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols>... </Symbols>
+        </d2p1:anyType>
+      </Sentence>
+    </d2p1:anyType>
+    <d2p1:anyType xmlns="" i:type="Sentence">
+      <Sentence>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>If</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>Peter</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>Piper</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>picked</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>a</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>peck</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>of</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>pickled</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>peppers</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols>, </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>Where</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>is</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>the</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>peck</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>that</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>Peter</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols>, </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>Piper</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>picked</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols> </Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Word">
+          <Symbols>where</Symbols>
+        </d2p1:anyType>
+        <d2p1:anyType xmlns="" i:type="Separator">
+          <Symbols>? </Symbols>
+        </d2p1:anyType>
+      </Sentence>
+    </d2p1:anyType>
+  </Sentences>
+</Text>

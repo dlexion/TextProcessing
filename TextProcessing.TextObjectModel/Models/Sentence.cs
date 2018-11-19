@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using TextProcessing.TextObjectModel.Interfaces;
 
 namespace TextProcessing.TextObjectModel.Models
 {
+    [DataContract(Namespace = "")]
+    [KnownType(typeof(SentenceElement))]
     public class Sentence : ISentence
     {
+        [DataMember(Name = "Sentence")]
         private List<ISentenceElement> _elements;
 
         public List<ISentenceElement> Elements
@@ -16,7 +20,7 @@ namespace TextProcessing.TextObjectModel.Models
             get => _elements;
             set
             {
-                if(value == null)
+                if (value == null)
                 {
                     throw new ArgumentNullException("SentenceElement");
                 }
