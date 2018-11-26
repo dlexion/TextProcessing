@@ -147,8 +147,6 @@ namespace TextProcessing.TextObjectModel.Models
             IList<ISentenceElement> elementsToInsert,
             List<ISentenceElement> collection)
         {
-            var currentIndex = collection.Count;
-
             collection.InsertRange(index, elementsToInsert);
 
             if (collection.Last().Equals(collection[index + elementsToInsert.Count]))
