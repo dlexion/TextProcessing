@@ -17,12 +17,7 @@ namespace TextProcessing.TextObjectModel.Models
 
         public bool IsQuestionMark()
         {
-            if (Symbols.Contains("?"))
-            {
-                return true;
-            }
-
-            return false;
+            return Symbols.Contains("?");
         }
     }
 }
